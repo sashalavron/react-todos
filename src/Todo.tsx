@@ -1,6 +1,6 @@
 
 import React, { ChangeEvent } from 'react';
-import { TodoWithoutId } from './App';
+import { TodoWithoutId } from './store';
 
 type TodoProps = {
   todo: TodoWithoutId;
@@ -12,7 +12,6 @@ export const Todo: React.FC<TodoProps> = ({ updateTodo, todo, children }) => {
     updateTodo({ ...todo, title: event.target.value })
   }
   const updateTodoIsDone = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log('???', event.target.checked)
     updateTodo({ ...todo, done: event.target.checked })
   }
 
